@@ -1,0 +1,62 @@
+html,input{
+    font-family: sans-serif;
+}
+body{
+    width:100%;
+    max-width: 600px;
+    margin:0 auto;
+    padding:2em;    
+}
+
+.headerContainer{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    font-weight: bold;
+    background-color: red;
+    margin-bottom: 20px;
+}
+div{
+    margin-top: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+button{
+    margin:0 auto;
+    width: 70%;
+}
+form{
+    margin-top: 50px;
+}
+label,input,button{
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+label{
+    text-align: right;
+    width: 30%;
+    margin-right: 2%;
+}
+input{
+    flex:auto; 
+}
+
+error{
+    color: red;
+    font-style: italic;
+    font-size: 12px;
+    width: 10%;
+}
+@media screen and (max-width:350px) { 
+    h1{
+        font-size: 40px;
+        text-align: center;
+    }
+    label{
+        width: 30%;
+        font-size: 12px;
+    }
+}

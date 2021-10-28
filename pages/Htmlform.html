@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <!--meta is used to store the meta data,character set etc-->
+    <meta name="viewport" content="width=device-width" />
+    <title>Basic input types</title>
+    <link rel="stylesheet" href="../css/form.css" />
+  </head>
+  <body>
+    <!--Create a form-->
+    <form>
+     <header class="headerContainer"><h1>HTML 5 Form Input Fields</h1></header>
+      <div>
+        <label for="Name">Text input field for Name:</label>
+        <input type="text" id="Name" name="Name"></input>
+        <span><error class="text-error" for="text"></error></span>
+      </div>
+      <div>
+        <label for="Password">password input type:</label>
+        <input type="password" id="password" name="password"></input>
+        <span><error class="password-error" for="password"></error></span>
+
+      </div>
+      <div>
+        <label for="Email">email input type:</label>
+        <input type="email" id="Email" name="Email"></input>
+        <span><error class="email-error" for="email"></error></span>
+      </div>
+      <div>
+        <label for="url">url input type:</label>
+        <input type="url" id="url" name="url"></input>
+      </div>
+      <div>
+        <label for="Phone">number input type:</label>
+        <input type="phone" id="phone" name="phone"></input>
+        <span><error class="phone-error" for="phone"></error></span>
+      </div>
+      <div>
+        <label for="tel">tel input type:</label>
+        <input type="tel" id="tel" name="tel"></input>
+      </div>
+      <div>
+        <label for="search">search input type:</label>
+        <input type="search" id="search" name="search"></input>
+      </div>
+      <div class="nativeDate">
+        <label for="party">choose a date and time:</label>
+        <input type="datetime-local" id="party" name="bday"></input>
+      </div>
+      <div>
+        <label for="salary">choose your salary</label>
+        <input type="range" id="salary" name="salary" min="30000" max="50000" step="100" value="40000"></input>
+        <output id="salary-output" for="salary">50000</output>
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+    <script>
+          /Salary range setter/
+      const salary = document.querySelector('#salary');
+      const output = document.querySelector('#salary-output');
+      output.textContent = salary.value;
+      salary.addEventListener('input', function () {
+        output.textContent = salary.value;
+      });
+       /*UC1-Validating first name */
+       const name = document.querySelector("#Name");//typeName
+        const nameError = document.querySelector(".text-error");
+        name.addEventListener('input',function(){
+            let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+            if(nameRegex.test(name.value))
+            nameError.textContent="";
+            else
+            nameError.textContent="Name is Incorrect";
+        });
+    </script>
+  </body>
+</html>
