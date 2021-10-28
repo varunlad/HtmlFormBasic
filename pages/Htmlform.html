@@ -75,6 +75,16 @@
             else
             nameError.textContent="Name is Incorrect";
         });
+        /*UC2-Validating Email */
+        const email = document.querySelector("#Email");
+        const emailError = document.querySelector(".email-error");
+        Email.addEventListener('input',function(){
+            let emailRegex = RegExp('^[a-z]{1,}[.]*[a-z]*[0-9]*[.]*@[a-z]*.[a-z]*$');
+            if(emailRegex.test(email.value))
+            emailError.textContent="";
+            else
+            emailError.textContent="Email is Incorrect";
+        });
     </script>
   </body>
 </html>
